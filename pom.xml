@@ -253,14 +253,11 @@
 						<version>${org.aspectj-version}</version>
 					</dependency>
 				</dependencies>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
+	
+	
+	<!--  -->
+	
+	
 				<configuration>
 					<outxml>true</outxml>
 					<source>${java-version}</source>

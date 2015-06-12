@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: Volodya
-Build-Jdk: 1.8.0_20
+Built-By: ￐ﾒ￐ﾾ￐ﾻ￐ﾾ￐ﾴ￑ﾏ
+Build-Jdk: 1.8.0_31
 Created-By: Maven Integration for Eclipse
 
