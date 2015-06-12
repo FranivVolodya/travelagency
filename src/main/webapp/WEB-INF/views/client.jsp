@@ -8,16 +8,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
+#h1{
+    	position: absolute;
+    	left: 250px;
+    	top: 325px;
+}
 #t1 {
     	position: absolute;
     	left: 250px;
-    	top: 50px;
+    	top: 75px;
 }
 
 #t2 {
     	position: absolute;
     	left: 250px;
-    	top: 250px;
+    	top: 375px;
 }
 
 body {
@@ -33,8 +38,13 @@ body {
 	<h2>
 		<spring:message code="label.title" />
 	</h2>
+	<h3><a href="index">Clients</a></h3> 
+	<h3><a href="index">Hotels</a></h3> 
+	<h3><a href="index">Visas</a></h3> 
+	<h3><a href="index">Reservations</a></h3> 
+	
 	<form:form method="post" action="add" commandName="client">
-		<table id="c1">
+		<table id="t1">
 			<tr>
 				<td><form:label path="name">
 						<spring:message code="label.name" />
@@ -89,11 +99,11 @@ body {
 			</tr>
 		</table>
 	</form:form>
-	<h3>
+	<h3 id="h1">
 		<spring:message code="label.contacts" />
 	</h3>
 	<c:if test="${!empty clientList}">
-		<table class="data" id="c2">
+		<table class="data" id="t2">
 			<tr>
 				<th><spring:message code="label.name" /></th>
 				<th><spring:message code="label.surname" /></th>
