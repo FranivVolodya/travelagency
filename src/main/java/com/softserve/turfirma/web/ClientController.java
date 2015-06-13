@@ -15,13 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.softserve.turfirma.domain.Client;
 import com.softserve.turfirma.services.IClientService;
 
-
-
-
-
-
 @Controller
 public class ClientController {
+	
+	int i;
 
 	@Autowired
 	private IClientService clientService;
@@ -49,6 +46,23 @@ public class ClientController {
 	public String deleteClient(@PathVariable("clientId") Integer
 	clientId) {
 	clientService.deleteClient(clientId);
+	return "redirect:/index";
+	}
+	@RequestMapping("/clientUpdate")
+	public String updaterClients(Map<String, Object> map) {
+	map.put("client", new Client());
+	return "clientUpdate";
+	}
+	@RequestMapping("/edit/{clientId}")
+	public String uperUpdateClient(@PathVariable("clientId") Integer
+	clientId) {	
+		i = clientId;
+	return "redirect:/clientUpdate";
+	}
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String updateClient(@ModelAttribute("client") Client
+	client) {
+	clientService.updateClient(client, i);
 	return "redirect:/index";
 	}
 }

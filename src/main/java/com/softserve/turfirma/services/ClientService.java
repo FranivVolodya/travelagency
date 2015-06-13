@@ -41,8 +41,8 @@ public class ClientService implements IClientService{
 	 *            Input object of client
 	 */
 	@Transactional
-	public void updateClient(Client client) {
-		dao.updateElement(client);
+	public void updateClient(Client client, int id) {
+		dao.updateElement(client, id);
 	}
 
 	/**

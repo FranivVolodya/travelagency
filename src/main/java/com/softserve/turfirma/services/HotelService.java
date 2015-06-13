@@ -35,7 +35,7 @@ public class HotelService implements IHotelService{
 	 * @param hotel
 	 *            Input object of hotel
 	 */
-	@Transactional(readOnly=false, propagation = Propagation.REQUIRED)
+	@Transactional
 	public void addHotel(Hotel hotel) {
 		dao.addElemrnt(hotel);
 	}
@@ -46,7 +46,7 @@ public class HotelService implements IHotelService{
 	 * @param hotel
 	 *            Input object of hotel
 	 */
-	@Transactional(readOnly=false, propagation = Propagation.REQUIRED)
+	@Transactional
 	public void updateHotel(Hotel hotel) {
 		dao.updateElement(hotel);
 	}
@@ -58,7 +58,7 @@ public class HotelService implements IHotelService{
 	 *            Hotel Id
 	 * @return Object hotel
 	 */
-	@Transactional(readOnly=false, propagation = Propagation.REQUIRED)
+	@Transactional
 	public Hotel findHotelById(int hotelId) {
 		return dao.findElementById(hotelId);
 	}
@@ -68,7 +68,7 @@ public class HotelService implements IHotelService{
 	 * 
 	 * @return List list
 	 */
-	@Transactional(readOnly=false, propagation = Propagation.REQUIRED)
+	@Transactional
 	public List<Hotel> getAllHotels() {
 		return dao.getAllElements();
 	}
@@ -79,6 +79,7 @@ public class HotelService implements IHotelService{
 	 * @param hotel
 	 *            Input object of hotel
 	 */
+	@Transactional
 	public void deleteHotels(int id) {
 		dao.deleteElement(id);
 	}

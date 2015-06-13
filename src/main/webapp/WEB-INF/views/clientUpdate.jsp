@@ -14,15 +14,10 @@
 	top: 325px;
 }
 
-#t1 {
-	position: absolute;
-	left: 250px;
-	top: 75px;
-}
 
 #t3 {
 	position: absolute;
-	left: 650px;
+	left: 250px;
 	top: 75px;
 }
 
@@ -58,8 +53,8 @@ body {
 		<a href="index">Reservations</a>
 	</h3>
 
-	<form:form method="post" action="add" commandName="client">
-		<table id="t1">
+	<form:form method="post" action="update" commandName="client">
+		<table id="t3">
 			<tr>
 				<td><form:label path="name">
 						<spring:message code="label.name" />
@@ -110,44 +105,11 @@ body {
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit"
-					value="<spring:message code="label.addcontact"/>" /></td>
+					value="Submit changes" /></td>
 			</tr>
 		</table>
 	</form:form>
 
-	<h3 id="h1">
-		<spring:message code="label.contacts" />
-	</h3>
-	<c:if test="${!empty clientList}">
-		<table class="data" id="t2">
-			<tr>
-				<th><spring:message code="label.name" /></th>
-				<th><spring:message code="label.surname" /></th>
-				<th><spring:message code="label.phoneNumber" /></th>
-				<th><spring:message code="label.passportNumber" /></th>
-				<th><spring:message code="label.city" /></th>
-				<th><spring:message code="label.street" /></th>
-				<th><spring:message code="label.house" /></th>
-				<th><spring:message code="label.apartment" /></th>
-				<th>&nbsp;</th>
-			</tr>
-			<c:forEach items="${clientList}" var="client">
-				<tr>
-					<td>${client.name}</td>
-					<td>${client.surname}</td>
-					<td>${client.phoneNumber}</td>
-					<td>${client.passportNumber}</td>
-					<td>${client.city}</td>
-					<td>${client.street}</td>
-					<td>${client.house}</td>
-					<td>${client.apartment}</td>
 
-					<td><a href="delete/${client.id}"> <spring:message
-								code="label.delete" /></a></td>
-					<td><a href="edit/${client.id}"> Edit </a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
 </body>
 </html>

@@ -25,8 +25,19 @@ public class EntityDaoClient implements IEntityDaoClient {
 		sessionFactory.getCurrentSession().save(client);
 	}
 
-	public void updateElement(Client client) {
-		sessionFactory.getCurrentSession().update(client);
+	public void updateElement(Client client, int id) {
+		Client clientTm = (Client) sessionFactory.getCurrentSession().load(Client.class, id);
+		if (null != clientTm) {
+		clientTm.setApartment(client.getApartment());
+		clientTm.setCity(client.getApartment());
+		clientTm.setHouse(client.getHouse());
+		clientTm.setName(client.getName());
+		clientTm.setPassportNumber(client.getPassportNumber());
+		clientTm.setPhoneNumber(client.getPhoneNumber());
+		clientTm.setStreet(client.getStreet());
+		clientTm.setStreet(client.getStreet());
+		}	
+		sessionFactory.getCurrentSession().update(clientTm);
 		
 	}
 

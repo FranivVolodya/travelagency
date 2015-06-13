@@ -13,7 +13,7 @@ import com.softserve.turfirma.domain.Client;
  */
 public interface IClientService {
 	public void addClient(Client client);
-	public void updateClient(Client client);
+	public void updateClient(Client client, int id);
 	public Client findClientById(int clientId);
 	public List getAllClients();
 	public void deleteClient(int id);

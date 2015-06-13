@@ -12,7 +12,7 @@ import com.softserve.turfirma.domain.*;
 */
 public interface IEntityDaoClient {
 	public void addElemrnt(Client client);
-	public void updateElement(Client client);
+	public void updateElement(Client client, int id);
 	public Client findElementById(int clientId);
 	public List getAllElements();
 	public void deleteElement(int id);
